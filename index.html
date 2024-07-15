@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Key Generator</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+        .banner {
+            background-color: #007bff;
+            color: #000;
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 80%;
+        }
+        .banner h1 {
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="banner">
+        <h1>Grupo do Telegram</h1>
+        <p><a href="https://t.me/+Mns6IsONSxliZDkx">https://t.me/+Mns6IsONSxliZDkx</a></p>
+        <p>Chave gerada: <span id="generatedKey">...</span></p>
+    </div>
+
+    <script>
+        // Geração de chave aleatória
+        function generateRandomKey() {
+            const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+            const length = 10;
+            let result = '';
+            for (let i = 0; i < length; i++) {
+                result += characters.charAt(Math.floor(Math.random() * characters.length));
+            }
+            return result;
+        }
+
+        // Atualizar a chave gerada na página
+        document.getElementById('generatedKey').textContent = generateRandomKey();
+    </script>
+</body>
+</html>
